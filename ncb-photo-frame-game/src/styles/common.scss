@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "Cubano";
+  src: url(../assets/fonts/Cubano.ttf) format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bear Days";
+  src: url(../assets/fonts/BearDays.ttf) format("truetype");
+  font-style: normal;
+}
+
+:root {
+  /* ==================== Base Colors ==================== */
+  --white: #ffffff;
+  --black: #000000;
+  --lightBlue: #0953cc;
+
+  /* ==================== Background Colors ==================== */
+  --bg-primary: #2c1553;
+  --bg-secondary: #310370;
+  --bg-white: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  /* ==================== Background Gradients ==================== */
+  --bg-gradient-primary: linear-gradient(180deg, #ffd52b 0%, #ff5411 100%);
+
+  /* ==================== Text Colors ==================== */
+  --text-primary: #ff5500;
+  --text-secondary: #837575;
+  --text-white: #ffffff;
+  --text-black: #000000;
+  --text-light: #4b5563;
+
+  /* ==================== Font Families ==================== */
+  --font-primary: "Cubano", sans-serif;
+  --font-secondary: "Bear Days", sans-serif;
+
+  --font-generic: "Lilita One", sans-serif;
+
+  /* ==================== Font Sizes ==================== */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.75rem; /* 28px */
+  --font-size-4xl: 2rem; /* 32px */
+
+  /* ==================== Placeholder Colors ==================== */
+  --placeholder-primary: #310370;
+  --placeholder-secondary: #414141;
+  --placeholder-light: #979797;
+
+  /* ==================== Border Colors ==================== */
+  --border-primary: #310370;
+  --border-secondary: #9ca3af;
+  --border-light: #e5e7eb;
+
+  /* ==================== Border Radius ==================== */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem; /* 8px */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-full: 9999px;
+
+  /* ==================== Shadows ==================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-inner: 0 4px 24.6px 0 rgba(0, 0, 0, 0.25),
+    0 -5px 18.2px 0 rgba(213, 129, 32, 0.2) inset;
+  --shadow-btn: 0 4px 16px 0 #ffe083;
+
+  /* ==================== State Colors ==================== */
+  --error-color: #ef0000;
+  --success-color: #209c2d;
+  --warning-color: #ff9900;
+  --info-color: #0953cc;
+
+  /* ==================== Spacing ==================== */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+
+  /* ==================== Transitions ==================== */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-all: all 0.3s ease;
+
+  /* ==================== Z-Index ==================== */
+  --z-index-dropdown: 100;
+  --z-index-modal: 1000;
+  --z-index-popover: 1100;
+  --z-index-tooltip: 1200;
+
+  /* ==================== Opacity ==================== */
+  --opacity-disabled: 0.58;
+  --opacity-hover: 0.8;
+  --opacity-light: 0.7;
+  --opacity-medium: 0.5;
+
+  /* ==================== Input Dimensions ==================== */
+  --input-height: 3rem;
+  --input-padding: 0.625rem; /* 10px */
+  --textarea-height: 4.6875rem; /* 75px */
+  --button-height: 2.9375rem; /* 47px */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--white);
+  font-family: var(--font-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin flex($direction, $justifyContent, $alignItems, $rowGap, $colGap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  row-gap: $rowGap;
+  column-gap: $colGap;
+}
+
+@mixin font($fontFamily, $fontSize, $color) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  color: $color;
+}
+@mixin gradientFont($color) {
+  background: $color;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin hideScroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+
+  &::-webkit-scrollbar {
+    background: transparent; /* Chrome/Safari/Webkit */
+    width: 0;
+  }
+}
+
+@mixin scrollBar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--white) orange;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: orange;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border-radius: 50%;
+    height: 50%;
+  }
+}
+
+@mixin fadeAnim($delay) {
+  @include fadeInUp;
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: $delay;
+  opacity: 0;
+}
+
+@mixin startFromCenter {
+  @keyframes startFromCenter {
+    0% {
+      transform: scale(0.2) rotate(0deg);
+      opacity: 0;
+      border-radius: 50%;
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+      opacity: 1;
+      border-radius: 10rem;
+    }
+  }
+}
+
+@mixin fadeInUp {
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin pop {
+  @keyframes pop {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin shake {
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-1px);
+    }
+    75% {
+      transform: translateX(1px);
+    }
+  }
+}
+
+@mixin zoomIn {
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0;
+    }
+    20% {
+      transform: scale(0.4, 0.4);
+      opacity: 1;
+    }
+    40% {
+      transform: scale(0.6, 0.6);
+    }
+    60% {
+      transform: scale(0.8, 0.8);
+    }
+    80% {
+      transform: scale(0.9, 0.9);
+    }
+    100% {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+}

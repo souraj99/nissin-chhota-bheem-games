@@ -1,0 +1,41 @@
+@import "../styles/global";
+
+.main-layout {
+  @include flex(column, space-between, center, normal, normal);
+  min-height: 100%;
+  text-align: center;
+
+  &.full-height {
+    .content {
+      justify-content: end;
+    }
+  }
+
+  header {
+    flex-shrink: 0;
+    padding: var(--spacing-sm);
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    img {
+      max-width: 2.5rem;
+    }
+  }
+
+  .content {
+    flex: 1;
+    width: 100%;
+    @include flex(column, space-between, center, normal, normal);
+  }
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

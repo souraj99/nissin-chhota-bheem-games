@@ -1,0 +1,154 @@
+@import "../styles/common.scss";
+
+.select-frame-page {
+  padding: var(--spacing-lg) var(--spacing-md);
+
+  .common-content {
+    @include flex(column, center, center, var(--spacing-sm), normal);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  // Main Slider Styles - Completely Independent
+  .main-slider-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    touch-action: none;
+    user-select: none;
+    pointer-events: none;
+
+    .main-swiper {
+      width: 100%;
+      height: 280px;
+      padding: var(--spacing-md) 0;
+      overflow: visible;
+
+      .swiper-slide {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition-all);
+        opacity: 0.4;
+        transform: scale(0.8);
+
+        &.swiper-slide-prev,
+        &.swiper-slide-next {
+          opacity: 0.9;
+          transform: scale(0.8);
+        }
+
+        &.swiper-slide-active {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .frame-wrapper {
+        width: 100%;
+        max-width: 200px;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+
+        .frame-image {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: var(--radius-lg);
+          background: var(--white);
+        }
+      }
+    }
+
+    .custom-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2.5rem;
+      position: relative;
+      z-index: 10;
+
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 2px;
+        background: #fff;
+        opacity: 0.5;
+        transition: var(--transition-all);
+        cursor: pointer;
+        border-radius: 795.36px;
+        margin: 0 2px;
+
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+          width: 14px;
+          height: 4px;
+          background: #000;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  // Thumbnail Slider Styles - Completely Independent
+
+  .thumb-slider-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto var(--spacing-sm);
+
+    .thumb-swiper {
+      width: 100%;
+      //   padding: var(--spacing-md) 0;
+
+      .swiper-slide {
+        width: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition-all);
+        transform: scale(0.85);
+        opacity: 0.9;
+
+        &.swiper-slide-active {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .thumb-frame {
+        width: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        // filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        border: 3px solid transparent;
+        border-radius: var(--radius-lg);
+        // padding: 4px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        .thumb-image {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: var(--radius-md);
+          background: var(--white);
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media screen and (max-width: 768px) {
+    .main-slider-container .main-swiper {
+      height: 220px;
+    }
+
+    .select-btn {
+      width: 90%;
+    }
+  }
+}

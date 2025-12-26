@@ -1,0 +1,116 @@
+@import "../styles/common.scss";
+
+.click-photo-page {
+  .photo-merge-container {
+    width: 100%;
+    max-width: 400px;
+    margin: var(--spacing-xl) auto;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .photo-frame {
+      width: 100%;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      &.merged {
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    .camera-container {
+      width: 100%;
+      position: relative;
+
+      video {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .capture-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        color: #000;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 1.2rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+
+        &:hover {
+          transform: translateX(-50%) scale(1.05);
+        }
+      }
+    }
+
+    .loading-overlay {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+      .spinner {
+        width: 60px;
+        height: 60px;
+        border: 5px solid rgba(255, 140, 0, 0.2);
+        border-top-color: #ff8c00;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: var(--spacing-md);
+      }
+
+      .loading-message {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #ff8c00;
+        text-align: center;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .photo-merge-container {
+      max-width: 320px;
+    }
+  }
+}

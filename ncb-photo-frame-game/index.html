@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/thumbnail.jpg" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>%VITE_PROJECT_NAME%</title>
+
+    <!-- SEO -->
+    <meta name="description" content="%VITE_PROJECT_DESCRIPTION%" />
+    <meta name="keywords" content="%VITE_PROJECT_KEYWORDS%" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="%VITE_PROJECT_NAME%" />
+    <meta property="og:description" content="%VITE_PROJECT_DESCRIPTION%" />
+    <meta property="og:image" content="%BASE_URL%/thumbnail.jpg" />
+    <meta property="og:url" content="%BASE_URL%" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="%BASE_URL%/thumbnail.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

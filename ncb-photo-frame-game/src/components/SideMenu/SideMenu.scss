@@ -1,0 +1,107 @@
+@import "../../styles/global";
+
+.side-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-dropdown);
+  transition: all 0s;
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  &.opened {
+    transform: translateX(0);
+
+    .bg {
+      opacity: 1;
+    }
+
+    .modal {
+      transform: translateX(0);
+    }
+  }
+
+  &.closed {
+    transition-delay: 0.5s;
+    transform: translateX(100vw);
+
+    .bg {
+      opacity: 0;
+    }
+
+    .modal {
+      transform: translateX(100vw);
+    }
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+    transition: var(--transition-all);
+  }
+
+  .modal {
+    position: absolute;
+    top: 0;
+    width: 85%;
+    right: 0;
+    height: 100%;
+    z-index: 2;
+    background: #241147;
+    background-size: 100% 100%;
+    height: 100%;
+    overflow: auto;
+    transition: var(--transition-slow);
+
+    .side-menu-header {
+      display: flex;
+      justify-content: space-between;
+      margin: var(--input-padding) var(--spacing-md);
+
+      .menu {
+        max-width: 40px;
+        margin-bottom: 0;
+      }
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+      }
+
+      .option {
+        padding: 0.9375rem;
+        color: var(--text-white);
+        text-align: center;
+        font-family: var(--font-primary);
+        font-size: var(--font-size-base);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        cursor: pointer;
+        transition: var(--transition-all);
+        border-bottom: 1px solid var(--white);
+        margin-top: var(--spacing-md);
+        width: fit-content;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
