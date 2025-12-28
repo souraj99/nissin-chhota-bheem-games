@@ -21,6 +21,9 @@ import TimerIcon from "../assets/images/ui/timer-icon.webp";
 import Congratulations from "../assets/images/ui/congratulations.webp";
 import Xp from "../assets/images/ui/xp.webp";
 import Cloud from "../assets/images/ui/cloud.webp";
+import ExitIcon from "../assets/images/ui/exit-icon.png";
+import PlayIcon from "../assets/images/ui/play-icon.png";
+import Htp from "../assets/images/ui/htp.webp";
 
 export const IMAGES = {
   Menu,
@@ -45,4 +48,7 @@ export const IMAGES = {
   Congratulations,
   Xp,
   Cloud,
+  ExitIcon,
+  PlayIcon,
+  Htp,
 };

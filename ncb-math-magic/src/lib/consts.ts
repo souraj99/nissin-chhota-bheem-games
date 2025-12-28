@@ -33,7 +33,7 @@ export const LANGUAGES: Record<LANGUAGE, string> = {
 
 export const ROUTES = {
   HOME: "/",
-  THANK_YOU: "/thank-you",
+  GAME: "/game",
 };
 
 export const STATES = [

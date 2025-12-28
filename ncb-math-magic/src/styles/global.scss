@@ -10,7 +10,7 @@
   --darkYellow: #ff9900;
   --skyBlue: #00dbdeff;
   --red: #ef0000;
-  --violet: #81109c;
+  --violet: #8016c7;
   --lightBlue: #0953cc;
 
   /* ==================== Background Colors ==================== */
@@ -201,6 +201,14 @@ img {
   &:disabled {
     cursor: not-allowed;
     filter: grayscale(1);
+  }
+  &.white {
+    background: var(--bg-white);
+    color: var(--violet);
+  }
+  &.m-auto {
+    margin: 0 auto;
+    margin-top: 1rem;
   }
 }
 
@@ -509,4 +517,16 @@ textarea {
   margin: 0 0 0.25rem;
   position: relative;
   top: var(--spacing-sm);
+}
+
+.htp-title {
+  font-family: var(--font-Lilita);
+  color: var(--white);
+
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
 }
