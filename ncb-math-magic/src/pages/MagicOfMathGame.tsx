@@ -332,7 +332,7 @@ const MagicOfMathGame = () => {
 
   return (
     <>
-      <MainLayout contentClass="common-page" className="auto-height">
+      <MainLayout contentClass="common-page" className="auto-height game-bg">
         <div className="common-content">
           {/* Game Header */}
           <div className="game-header">
