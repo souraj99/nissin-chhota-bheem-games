@@ -39,6 +39,11 @@ export interface RegisterResponse extends BaseResponse {
   accessToken: string;
 }
 
+export interface BaseResponse {
+  statusCode: number;
+  message: string;
+}
+
 export interface Equation {
   images: string[];
   total: number;

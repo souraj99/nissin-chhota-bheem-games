@@ -18,6 +18,9 @@ import QuizChutki from "../assets/images/ui/quiz-chutki.webp";
 import QuizKaalia from "../assets/images/ui/quiz-kaalia.webp";
 import RetryIcon from "../assets/images/ui/retry-icon.webp";
 import TimerIcon from "../assets/images/ui/timer-icon.webp";
+import Congratulations from "../assets/images/ui/congratulations.webp";
+import Xp from "../assets/images/ui/xp.webp";
+import Cloud from "../assets/images/ui/cloud.webp";
 
 export const IMAGES = {
   Menu,
@@ -39,4 +42,7 @@ export const IMAGES = {
   QuizKaalia,
   RetryIcon,
   TimerIcon,
+  Congratulations,
+  Xp,
+  Cloud,
 };

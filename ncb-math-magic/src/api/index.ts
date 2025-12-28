@@ -17,6 +17,7 @@ import { defaultCatch, fetchHandlerText, responseHelper } from "./utils";
 import { getCookie, logoutUser } from "../lib/utils";
 import { store } from "../store/store";
 import { toast } from "react-toastify";
+import { mockAPI } from "./mocks/mockAPI";
 
 const jsonHeaders: { [key: string]: string } = {
   Accept: "application/json",
@@ -141,7 +142,17 @@ class APIS {
       .finally(this.hideLoader);
   }
 
-  async magicMatGame(key: string): Promise<MAthGameResponse> {
+  async magicMathGame(key: string): Promise<MAthGameResponse> {
+    console.log("a", import.meta.env.VITE_USE_MOCK_API);
+    if (import.meta.env.VITE_USE_MOCK_API === "true") {
+      console.log("b");
+      console.log("📦 Using MOCK API for magicMathGame");
+      this.showLoader("Preparing Game...");
+      const result = await mockAPI.magicMathGame(key);
+      this.hideLoader();
+      return result;
+    }
+    console.log("c");
     this.showLoader("Preparing  Game...");
     return authorisedEncrytedApiCall("users/magicMatGame/", { key })
       .then(fetchHandlerText)
@@ -155,6 +166,11 @@ class APIS {
     id: number,
     option: any
   ): Promise<GameComplete> {
+    if (import.meta.env.VITE_USE_MOCK_API === "true") {
+      console.log("📦 Using MOCK API for magicMathAns");
+      return mockAPI.magicMathAns(key, id, option);
+    }
+
     return authorisedEncrytedApiCall("users/magicMathAns/", { key, id, option })
       .then(fetchHandlerText)
       .then(decryptData)

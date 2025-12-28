@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import { ROUTES } from "../lib/consts";
-import UserRegister from "../pages/UserReg";
+import MagicOfMathGame from "../pages/MagicOfMathGame";
 
 export const AllRoutes = () => {
   return (
     <Routes key={location.pathname}>
-      <Route path={ROUTES.HOME} element={<UserRegister />} />
+      <Route path={ROUTES.HOME} element={<MagicOfMathGame />} />
     </Routes>
   );
 };
