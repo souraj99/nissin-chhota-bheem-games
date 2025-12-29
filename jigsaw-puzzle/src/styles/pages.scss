@@ -1,0 +1,680 @@
+// Game Completion Modal Styles
+
+@import "../styles/@mixins.scss";
+
+.common-page {
+  .common-content {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    flex: 1;
+    @include flex(column, start, center, 0.5rem, normal);
+    &.center {
+      justify-content: center;
+    }
+    &.width {
+      width: 64%;
+    }
+
+    .home-content-wrapper {
+      width: 100%;
+      @include flex(column, center, center, 2rem, normal);
+      .gs-logo {
+        margin-top: 2rem;
+        max-width: 250px;
+      }
+      .chutki-gs {
+        max-width: 150px;
+      }
+      .button-section {
+        width: 100%;
+        @include flex(row, center, center, normal, 2rem);
+      }
+      .exit-icon {
+        max-width: 60px;
+      }
+      .play-icon {
+        max-width: 90px;
+      }
+    }
+    // MagicOfMathGame Styles
+
+    .magic-of-math {
+      color: #000;
+      font-family: sans-serif;
+      text-align: center;
+
+      .round-title {
+        color: #fff;
+        text-align: center;
+        font-family: "Cinzel";
+        font-size: 1.7rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        .bold {
+          font-size: 2.3rem;
+        }
+      }
+      .result-title {
+        color: var(--yellow, #fef102);
+        font-family: "Cinzel";
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 0;
+      }
+
+      .equations {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      .equation-row {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 5px;
+        width: 100%;
+        &.big-img {
+          .dragon-img {
+            width: 80px;
+            margin: 0 5px;
+          }
+        }
+        .dragon-img {
+          width: 60px;
+          margin: 0 5px;
+        }
+
+        .symbol {
+          font-size: 24px;
+          margin: 0 5px;
+        }
+
+        .equals {
+          margin-left: 10px;
+        }
+
+        .total {
+          font-size: 20px;
+          margin-left: 5px;
+          display: inline-block;
+          min-width: 78px;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          font-weight: 700;
+          background: url("../assets/images/ui/cloud.webp") no-repeat center
+            center;
+          background-size: contain;
+          color: #333;
+          border-radius: 12px;
+        }
+      }
+    }
+
+    .magic-of-math-result {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .round-title {
+        color: #fff;
+        text-align: center;
+        font-family: "Cinzel";
+        font-size: 1.7rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+        .bold {
+          font-size: 2.3rem;
+        }
+      }
+      .result-title {
+        color: var(--yellow, #fef102);
+        font-family: "Cinzel";
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 0;
+      }
+      .result-list {
+        margin-top: 1rem;
+        width: 85%;
+        .equation-result-row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+          gap: 2rem;
+          p,
+          .question-number {
+            color: #fff;
+            text-align: center;
+            font-family: "Cinzel";
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            margin: 0;
+          }
+        }
+      }
+
+      .final-score {
+        margin-top: 2rem;
+        .score-circle {
+          display: flex;
+          width: 96px;
+          height: 96px;
+          padding: 23px 16px;
+          flex-direction: column;
+
+          gap: 8px;
+          flex-shrink: 0;
+          border-radius: 48px;
+          border: 3px solid var(--yellow, #fef102);
+          font-size: 36px;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-family: "Cinzel";
+          color: var(--yellow, #fef102);
+          justify-content: center;
+          .sc-l {
+            position: relative;
+            right: 20px;
+            top: 14px;
+          }
+          .sc-r {
+            position: relative;
+            left: 16px;
+            bottom: 7px;
+          }
+        }
+
+        .share-button {
+          display: block;
+          margin: 1rem auto 0;
+          background: #fdd835;
+          border: none;
+          border-radius: 999px;
+          padding: 12px 24px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+    // Game Header Styles
+    .game-header {
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      z-index: 100;
+    }
+
+    .timer-display,
+    .score-display {
+      color: #fff;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      min-height: 40px;
+      min-width: 115px;
+      position: relative;
+      &.score-bg {
+        background: url(../assets/images/ui/header-content-bg-l.webp) no-repeat
+          center center;
+        background-size: contain;
+        padding: 0.2rem 2.2rem 0.2rem 0.3rem;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -12%;
+          transform: translateY(-50%);
+          width: 48px;
+          height: 48px;
+          background: url(../assets/images/ui/conin-icon.webp) no-repeat center
+            center;
+          background-size: contain;
+        }
+      }
+      &.timer-bg {
+        background: url(../assets/images/ui/header-content-bg-r.webp) no-repeat
+          center center;
+        background-size: contain;
+        padding: 0.2rem 0.2rem 0.2rem 2.2rem;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -12%;
+          transform: translateY(-50%);
+          width: 48px;
+          height: 48px;
+          background: url(../assets/images/ui/timer-icon.webp) no-repeat center
+            center;
+          background-size: contain;
+        }
+      }
+    }
+
+    .timer-text {
+      color: #fff;
+      transition: color 0.3s ease;
+      width: 60px;
+
+      &.timer-warning {
+        color: #e74c3c;
+        animation: pulse 1s infinite;
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+    .score-text {
+      color: #fff;
+      transition: transform 0.3s ease;
+
+      &.score-animate {
+        animation: scoreIncrease 0.5s ease;
+      }
+    }
+
+    @keyframes scoreIncrease {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    // Game Completion Modal Styles
+    .game-completion-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .game-completion-modal {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.4s ease;
+
+      @media (max-width: 768px) {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-content {
+      text-align: center;
+    }
+
+    .modal-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .completion-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+
+      @media (max-width: 768px) {
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+
+      @media (max-width: 768px) {
+        padding: 0.75rem 1rem;
+      }
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #7f8c8d;
+      font-weight: 500;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+      }
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+
+      @media (max-width: 768px) {
+        font-size: 1.25rem;
+      }
+
+      &.score-highlight {
+        color: #27ae60;
+        font-size: 2rem;
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    // MagicOfMathGame answer-section and character-img styles
+    .answer-section {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .answer-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .character-img {
+      width: 90px !important;
+      height: 90px !important;
+      object-fit: contain;
+      display: block;
+    }
+
+    .answer-input {
+      max-width: 72px;
+      width: 72px;
+      height: 48px;
+      padding: 0 8px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      background: url("../assets/images/ui/cloud.webp") no-repeat center center;
+      background-size: contain;
+      background-color: transparent;
+      box-shadow: none;
+      outline: none;
+      color: #333;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+.game-completion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.game-completion-modal {
+  position: relative;
+  max-width: 450px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(80px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* Congratulations Image */
+.congrats-image-container {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 1rem;
+}
+
+.congrats-image {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Starburst Background */
+// .starburst-bg {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 350px;
+//   height: 350px;
+//   background: repeating-conic-gradient(
+//     from 0deg,
+//     rgba(255, 200, 0, 0.08) 0deg 9deg,
+//     rgba(100, 50, 0, 0.03) 9deg 18deg
+//   );
+//   border-radius: 50%;
+//   z-index: 0;
+//   opacity: 0.6;
+// }
+
+/* Score Display */
+.score-display-popup {
+  position: relative;
+  z-index: 2;
+  top: -3rem;
+  margin: 0 0 -3rem;
+}
+
+.score-label {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.score-value {
+  color: #ffd700;
+  font-size: 4.5rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.5);
+  margin: 0;
+  line-height: 65px;
+}
+
+/* Stats Row */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-badge {
+  display: flex;
+  width: 158px;
+  padding: 0.5rem;
+  padding: 0 22.859px;
+  justify-content: center;
+  align-items: center;
+  gap: 11.41px;
+  border-radius: 35.656px;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  width: 38px;
+}
+
+.stat-number {
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/* Action Buttons */
+.modal-actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.btn {
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.btn-home,
+.btn-replay {
+  width: fit-content;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  max-width: 80px;
+  background: transparent;
+}
+
+.btn-replay {
+  max-width: 100px;
+}
